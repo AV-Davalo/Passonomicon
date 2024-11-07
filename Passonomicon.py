@@ -1,5 +1,23 @@
+import argparse
 from itertools import product
 import datetime
+
+# ASCII Banner
+banner = """
+
+ ██▓███   ▄▄▄        ██████   ██████  ▒█████   ███▄    █  ▒█████   ███▄ ▄███▓ ██▓ ▄████▄   ▒█████   ███▄    █ 
+▓██░  ██▒▒████▄    ▒██    ▒ ▒██    ▒ ▒██▒  ██▒ ██ ▀█   █ ▒██▒  ██▒▓██▒▀█▀ ██▒▓██▒▒██▀ ▀█  ▒██▒  ██▒ ██ ▀█   █ 
+▓██░ ██▓▒▒██  ▀█▄  ░ ▓██▄   ░ ▓██▄   ▒██░  ██▒▓██  ▀█ ██▒▒██░  ██▒▓██    ▓██░▒██▒▒▓█    ▄ ▒██░  ██▒▓██  ▀█ ██▒
+▒██▄█▓▒ ▒░██▄▄▄▄██   ▒   ██▒  ▒   ██▒▒██   ██░▓██▒  ▐▌██▒▒██   ██░▒██    ▒██ ░██░▒▓▓▄ ▄██▒▒██   ██░▓██▒  ▐▌██▒
+▒██▒ ░  ░ ▓█   ▓██▒▒██████▒▒▒██████▒▒░ ████▓▒░▒██░   ▓██░░ ████▓▒░▒██▒   ░██▒░██░▒ ▓███▀ ░░ ████▓▒░▒██░   ▓██░
+▒▓▒░ ░  ░ ▒▒   ▓▒█░▒ ▒▓▒ ▒ ░▒ ▒▓▒ ▒ ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒ ░ ▒░▒░▒░ ░ ▒░   ░  ░░▓  ░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒ 
+░▒ ░       ▒   ▒▒ ░░ ░▒  ░ ░░ ░▒  ░ ░  ░ ▒ ▒░ ░ ░░   ░ ▒░  ░ ▒ ▒░ ░  ░      ░ ▒ ░  ░  ▒     ░ ▒ ▒░ ░ ░░   ░ ▒░
+░░         ░   ▒   ░  ░  ░  ░  ░  ░  ░ ░ ░ ▒     ░   ░ ░ ░ ░ ░ ▒  ░      ░    ▒ ░░        ░ ░ ░ ▒     ░   ░ ░ 
+               ░  ░      ░        ░      ░ ░           ░     ░ ░         ░    ░  ░ ░          ░ ░           ░ 
+                                                                                 ░                            
+                        Password Generator Tool - Made with <3 by Davalo
+"""
+
 
 current_year = datetime.datetime.now().year
 current_month = datetime.datetime.now().strftime('%B')
@@ -41,8 +59,25 @@ def generate_passwords(name):
 
     return list(set(passwords)) 
 
-name = input("Enter the company name: ")
-password_list = generate_passwords(name)
+def main():
+    print(banner)
+    
+    parser = argparse.ArgumentParser(description="Generate password variations for a given name.")
+    parser.add_argument("name", type=str, help="The company name to base password variations on.")
+    parser.add_argument("-o", "--output", type=str, help="Specify an output file to save generated passwords.")
+    args = parser.parse_args()
+    
+    password_list = generate_passwords(args.name)
 
-for password in password_list:
-    print(password)
+    if args.output:
+        with open(args.output, 'w') as f:
+            for password in password_list:
+                f.write(password + "\n")
+        print(f"\nPasswords saved to {args.output}")
+    else:
+        print("\nGenerated Passwords:")
+        for password in password_list:
+            print(password)
+
+if __name__ == "__main__":
+    main()
