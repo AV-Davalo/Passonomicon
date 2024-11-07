@@ -11,8 +11,6 @@ This is a tool created top generate a custom wordlist for password spraying usin
 ░░         ░   ▒   ░  ░  ░  ░  ░  ░  ░ ░ ░ ▒     ░   ░ ░ ░ ░ ░ ▒  ░      ░    ▒ ░░        ░ ░ ░ ▒     ░   ░ ░ 
                ░  ░      ░        ░      ░ ░           ░     ░ ░         ░    ░  ░ ░          ░ ░           ░ 
                                                                                  ░
-```
-                                                                                 
                                                                                                              
 usage: Passonomicon.py [-h] [-o OUTPUT] name
 
@@ -25,3 +23,4 @@ options:
   -h, --help            show this help message and exit
   -o OUTPUT, --output OUTPUT
                         Specify an output file to save generated passwords.
+```
