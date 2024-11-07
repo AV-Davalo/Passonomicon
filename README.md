@@ -1,7 +1,6 @@
 This is a tool created top generate a custom wordlist for password spraying using the name of the company and iteration of the name and the month and year
 
-
-
+```
  ██▓███   ▄▄▄        ██████   ██████  ▒█████   ███▄    █  ▒█████   ███▄ ▄███▓ ██▓ ▄████▄   ▒█████   ███▄    █ 
 ▓██░  ██▒▒████▄    ▒██    ▒ ▒██    ▒ ▒██▒  ██▒ ██ ▀█   █ ▒██▒  ██▒▓██▒▀█▀ ██▒▓██▒▒██▀ ▀█  ▒██▒  ██▒ ██ ▀█   █ 
 ▓██░ ██▓▒▒██  ▀█▄  ░ ▓██▄   ░ ▓██▄   ▒██░  ██▒▓██  ▀█ ██▒▒██░  ██▒▓██    ▓██░▒██▒▒▓█    ▄ ▒██░  ██▒▓██  ▀█ ██▒
@@ -11,7 +10,10 @@ This is a tool created top generate a custom wordlist for password spraying usin
 ░▒ ░       ▒   ▒▒ ░░ ░▒  ░ ░░ ░▒  ░ ░  ░ ▒ ▒░ ░ ░░   ░ ▒░  ░ ▒ ▒░ ░  ░      ░ ▒ ░  ░  ▒     ░ ▒ ▒░ ░ ░░   ░ ▒░
 ░░         ░   ▒   ░  ░  ░  ░  ░  ░  ░ ░ ░ ▒     ░   ░ ░ ░ ░ ░ ▒  ░      ░    ▒ ░░        ░ ░ ░ ▒     ░   ░ ░ 
                ░  ░      ░        ░      ░ ░           ░     ░ ░         ░    ░  ░ ░          ░ ░           ░ 
-                                                                                 ░                            
+                                                                                 ░
+```
+                                                                                 
+                                                                                                             
 usage: Passonomicon.py [-h] [-o OUTPUT] name
 
 Generate password variations for a given name.
